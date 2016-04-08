@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="politicsApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Politics</title>
+    <script src="angular.min.js"></script>
+    <script src="client.js"></script>
+    <link href = "styles.css" rel = "stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+  </head>
+  <body ng-controller='MainController'>
+    <h1>Roll the Dice Democracy!</h1>
+
+  <div class = "content">
+    <button ng-click="displayCandidates()">Display Candidates</button>
+
+      <div ng-show="showCandidates">
+        <h2>Democrats:</h2>
+        <ul>
+          <li ng-repeat="dem in democrats">
+            {{dem}}
+          </li>
+        </ul>
+        <h2>Republicans:</h2>
+        <ul>
+          <li ng-repeat="rep in republicans">
+            {{rep}}
+          </li>
+        </ul>
+      </div>
+
+    <button ng-click="pickPres()">Choose a President</button>
+      <div ng-show="showPresident">
+        <h2>The winner is: {{winner}}</h2>
+      </div>
+  </div>
+
+  </body>
+</html>
